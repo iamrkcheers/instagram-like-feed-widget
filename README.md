@@ -96,3 +96,4 @@ A customizable product widget built with React that can be embedded into any blo
 ### Note
 
 1. Photos and videos have been taken from 'pexels.com'.
+2. Have used ChatGPT to clean up the code and help me write comments.
