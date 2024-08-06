@@ -4,6 +4,7 @@ A customizable product widget built with React that can be embedded into any blo
 
 ## Project Structure
 
+```
 .
 ├── dist
 │ ├── widget.js # Bundled and minified widget application. Has been deployed to [https://iamrkcheers.github.io/data/widget.js].
@@ -24,6 +25,7 @@ A customizable product widget built with React that can be embedded into any blo
 ├── package.json # Project dependencies and scripts
 ├── index.html # Dummy file to test the working of the widget
 └── README.md # Project documentation
+```
 
 ## Tech Stack
 
@@ -68,8 +70,8 @@ A customizable product widget built with React that can be embedded into any blo
 1. npm install
 2. npx webpack (This will create a widget.js file in dist folder)
 3. Create a dummy index.html file
-4. Add <script src="path/to/widget.js" defer></script>
-5. Add <product-list-widget id="widget1" catalogue="your-json-file.json" isTitle isPrice isMedia isDescription isDarkMode ></product-list-widget>
+4. Add `html<script src="path/to/widget.js" defer></script>`
+5. Add `html<product-list-widget id="widget1" catalogue="your-json-file.json" isTitle isPrice isMedia isDescription isDarkMode ></product-list-widget>`
 6. Run the file using a server
    ( Name: Live Server
    Id: ritwickdey.LiveServer
