@@ -1,0 +1,120 @@
+/* Container for the product feed */
+.product-feed {
+  height: 50vh; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px; /* Padding around the container */
+  max-width: 1375px; /* Max width to keep it within bounds */
+  margin: 0 auto; /* Center the widget horizontally */
+}
+
+/* Container for the list of product cards */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Gap between cards */
+}
+
+/* Style for individual product cards */
+.product-card {
+  border: 1px solid #ddd; /* Light border for default theme */
+  border-radius: 8px; /* Rounded corners */
+  padding: 8px; /* Padding inside the card */
+  margin: 8px; /* Margin around the card */
+  text-align: center; /* Center align text */
+  background-color: #fff; /* White background by default */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  flex: 1 1 calc(25% - 20px); /* 4 cards in a row with gaps */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Dark mode styles for product cards */
+.product-card.dark {
+  border: 1px solid #000; /* Dark border for dark theme */
+  background-color: #444; /* Dark background */
+}
+
+/* Hover effect for product cards */
+.product-card:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Style for media elements (images/videos) */
+.media {
+  width: 100%; /* Full width of the card */
+  max-width: 100%; /* Prevent overflow */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Skeleton loading styles */
+.skeleton-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skeleton-image {
+  width: 100%; /* Full width */
+  height: 150px; /* Fixed height */
+  margin-bottom: 8px; /* Space below the image */
+  background-color: #ccc; /* Light gray background */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.skeleton-text {
+  width: 60%; /* Narrow width for text */
+  height: 20px; /* Fixed height for text */
+  background-color: #ccc; /* Light gray background */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Headings and paragraphs styling */
+h2 {
+  font-size: 1.2em; /* Slightly larger font size for headings */
+  margin: 0.5em 0; /* Margin above and below */
+}
+
+p {
+  margin: 0.5em 0; /* Margin above and below */
+  font-size: 0.9em; /* Slightly smaller font size */
+}
+
+/* Button styling */
+button {
+  padding: 8px 16px; /* Padding inside the button */
+  margin: 5px; /* Margin around the button */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 0.9em; /* Slightly smaller font size */
+}
+
+/* Hover effect for buttons */
+button:hover {
+  background-color: #ddd; /* Light gray background on hover */
+}
+
+/* Responsive styling for devices with max-width 768px (mobile) */
+@media (max-width: 768px) {
+  .product-card {
+    flex: 1 1 calc(50% - 20px); /* 2 cards per row on mobile */
+  }
+
+  .media {
+    max-height: 200px; /* Limit media height */
+    object-fit: cover; /* Cover the area without distortion */
+  }
+}
+
+/* Responsive styling for devices with min-width 769px (desktop) */
+@media (min-width: 769px) {
+  .product-card {
+    flex: 1 1 calc(25% - 20px); /* 4 cards per row on desktop */
+  }
+
+  .media {
+    max-height: 250px; /* Limit media height */
+    object-fit: contain; /* Contain media within the area */
+  }
+}

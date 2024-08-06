@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Instagram Like Feed Widget
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A customizable product widget built with React that can be embedded into any blog post or website. This widget displays a list of products with various features and supports light and dark themes.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+.
+├── dist
+│ ├── widget.js # Bundled and minified widget application. Has been deployed to [https://iamrkcheers.github.io/data/widget.js].
+├── public
+│ ├── index.html # Main HTML template for React app
+├── src
+│ ├── Components
+│ │ ├── ProductFeed.js # Main component for displaying the product list
+│ │ ├── ProductCard.js # Component for the individual product
+│ │ ├── SearchFilter.js # Component for search and filtering
+│ │ └── ToggleSwitch.js # Toggle switch component for dark/light mode (not utilised in the final working of the app)
+│ ├── App.js # Main React application component
+│ ├── entryPoint.js # Entry point for the widget bundle
+│ ├── index.css # Global CSS styles
+│ └── index.js # React entry point for the main app
+├── .babelrc # Babel configuration file
+├── webpack.config.js # Webpack configuration file
+├── package.json # Project dependencies and scripts
+├── index.html # Dummy file to test the working of the widget
+└── README.md # Project documentation
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React:** JavaScript library for building user interfaces
+- **Webpack:** Module bundler for JavaScript applications
+- **Babel:** JavaScript compiler to use next-generation JavaScript
+- **CSS:** Styling the widget
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How the Widget Works
 
-### `npm test`
+1. **Widget Structure:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   - The `ProductFeed` component displays a list of products.
+   - `SearchFilter` allows users to search and filter products.
 
-### `npm run build`
+2. **Widget Customization:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   - **`catalogue`**: URL to fetch product data from.
+   - **`isTitle`, `isPrice`, `isMedia`, `isDescription`**: Flags to display product title, price, media, and description.
+   - **`isDarkMode`**: Enables dark mode if set.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Embedding the Widget:**
+   - Include the widget script in your HTML:
+     ```html
+     <script src="https://iamrkcheers.github.io/data/widget.js" defer></script>
+     ```
+   - Embed the widget in your HTML:
+     ```html
+     <product-list-widget
+       id="widget1"
+       catalogue="your-json-file.json"
+       isTitle
+       isPrice
+       isMedia
+       isDescription
+       isDarkMode
+     ></product-list-widget>
+     ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### How to Build the Widget
 
-### `npm run eject`
+1. npm install
+2. npx webpack (This will create a widget.js file in dist folder)
+3. Create a dummy index.html file
+4. Add <script src="path/to/widget.js" defer></script>
+5. Add <product-list-widget id="widget1" catalogue="your-json-file.json" isTitle isPrice isMedia isDescription isDarkMode ></product-list-widget>
+6. Run the file using a server
+   ( Name: Live Server
+   Id: ritwickdey.LiveServer
+   Description: Launch a development local Server with live reload feature for static & dynamic pages
+   Version: 5.7.9
+   Publisher: Ritwick Dey
+   VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer )
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Further Enhancements
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Including 'view now' and 'buy now' functionalities.
+2. Adding more themes than just light & dark.
+3. Implementing configuration options via a settings panel.
+4. Adding keyboard navigation support for better usability.
+5. Adding analytics to track user interactions with the widget.
+6. Implementing unit tests and integration tests for better code reliability.
+7. Adding support for multiple product list json files.
+8. Adding support for multiple images and videos for the same product.
+9. Can be converted into an instagram like reels platform for product videos.
+10. Adding swiping gestures.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Note
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Photos and videos have been taken from 'pexels.com'.

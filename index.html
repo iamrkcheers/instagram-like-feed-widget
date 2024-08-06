@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Widget</title>
+    <style>
+      #widget-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    </style>
+    <!-- <script src="dist/widget.js" defer></script> -->
+    <script src="https://iamrkcheers.github.io/data/widget.js" defer></script>
+  </head>
+  <body>
+    <product-list-widget
+      id="widget1"
+      catalogue="https://iamrkcheers.github.io/data/product.json"
+      isTitle
+      isPrice
+      isMedia
+      isDescription
+      isDarkMode
+    ></product-list-widget>
+    <product-list-widget
+      id="widget2"
+      catalogue="https://iamrkcheers.github.io/data/product.json"
+      isTitle
+      isPrice
+      isMedia
+    ></product-list-widget>
+  </body>
+</html>

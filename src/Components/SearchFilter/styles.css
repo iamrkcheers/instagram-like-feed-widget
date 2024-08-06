@@ -1,0 +1,55 @@
+.search-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 20px; /* Add margin to create space from the container edge */
+  gap: 15px;
+}
+
+.search-filter input,
+.search-filter select {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 6px;
+  flex: 1; /* Allow elements to take up available space */
+}
+
+.search-filter input:last-child,
+.search-filter select:last-child {
+  margin-right: 0;
+}
+
+.search-filter.dark input,
+.search-filter.dark select {
+  border: 1px solid black;
+  background: #444;
+  color: #fff; /* White text color in dark mode */
+}
+
+.search-filter.light input,
+.search-filter.light select {
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.search-filter input:hover,
+.search-filter select:hover {
+  border-color: #888; /* Light grey border on hover */
+}
+
+.search-filter input:focus,
+.search-filter select:focus {
+  border-color: #0056b3; /* Blue border on focus */
+  outline: none; /* Remove default focus outline */
+}
+
+@media (max-width: 600px) {
+  .search-filter {
+    flex-direction: row;
+  }
+
+  .search-filter input,
+  .search-filter select {
+    margin: 5px 0;
+  }
+}
